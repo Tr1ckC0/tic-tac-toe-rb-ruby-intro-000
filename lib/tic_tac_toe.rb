@@ -42,11 +42,21 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.chomp
   index = input_to_index(input)
+<<<<<<< HEAD
   token = current_player(board)
     if valid_move?(board, index)
        move(board, index, token)
     else
         turn(board)
+=======
+    if valid_move?(board, index)
+       move(board, index, token = "X")
+    else
+      puts "invalid"
+      until valid_move?(board, index)
+        turn(board)
+      end
+>>>>>>> b51d027f98ce41b7a7d76fa0a213f2ca951d01f1
     end
 end
 
@@ -83,6 +93,7 @@ def winner(board)
     board[winning_player.first]
   end
 end
+<<<<<<< HEAD
 
 def play(board)
   until over?(board)
@@ -96,3 +107,5 @@ def play(board)
     puts "Cat's Game!"
   end
 end
+=======
+>>>>>>> b51d027f98ce41b7a7d76fa0a213f2ca951d01f1
