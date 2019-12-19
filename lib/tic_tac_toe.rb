@@ -42,21 +42,11 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.chomp
   index = input_to_index(input)
-
   token = current_player(board)
     if valid_move?(board, index)
        move(board, index, token)
     else
         turn(board)
-
-    if valid_move?(board, index)
-       move(board, index, token = "X")
-    else
-      puts "invalid"
-      until valid_move?(board, index)
-        turn(board)
-      end
-
     end
 end
 
